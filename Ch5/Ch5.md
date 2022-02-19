@@ -1,0 +1,60 @@
+<h1>5장 배열
+
+<h2>
+
+- 배열이란?
+  - 같은 타입의 여러 변수를 하나의 묶음으로 다루는 것
+  - 배열 선언
+    - 타입[] 변수이름;  -  java 스타일
+      - int[] score;
+      - String[] name;
+    - 타입 변수이름[];  -  C언어 스타일
+      - int score[];
+      - String name[];
+  - 배열 생성
+    - 변수이름 = new 타입[길이];
+    - score = new int[5];  -  int타입의 값 5개를 저장할 수 있는 배열 생성
+    - name = new String[3];   -  String타입의 값 3개를 저장할 수 있는 배열 생성
+  - 배열의 인덱스
+    - 각 요소에 자동으로 붙는 일련 번호
+    - 인덱스의 시작은 0부터 시작됨
+  - 배열의 길이
+    - 배열은 한번 생성하면 (실행동안) 그 길이를 바꿀 수 없다.
+    - 배열이름.length;
+    - int score_length = score.length;
+    - score_length는 5가 된다.
+  - 배열의 초기화
+    - 배열의 각 요소에 처음으로 값을 저장하는 것
+    - 배열은 기본적으로 자동으로 초기화 됨
+    - int[] score = new int[] {10,20,30,40,50};
+    - int[] score = {10,20,30,40,50};  -  new int[] 생략가능
+    - 에러 예
+    - int[] score;
+    - score = {10,20,30,40,50};  -  선언과 초기화를 이렇게 두 줄에 걸쳐 할 시 에러남
+  - 배열의 출력
+  - System.out.println(score);
+  - [I@7a81197d와 같은 형식의 문자열이 출력됨.
+  - 배열의 요소를 출력하기 위해선 반복문을 사용하거나 Arrays.toString()을 사용
+  - char 배열일때는 System.out.println()를 사용해도 출력됨.
+
+- String 클래스
+  - String 클래스의 주요 메서드
+    - str.charAt(int index) - 문자열에서 해당 위치(index)에 있는 문자를 반환한다.
+    - int length() 문자열의 길이를 반환한다.
+    - String substring(int from, int to)  -  문자열에서 해당 범위(from~to)의 문자열을 반환한다.(to는 포함 안됨)
+    - boolean equals(Object obj) -  문자열의 내용이 같은지 확인한다. 같으면 결과는 true 다르면 false
+    - char[] toCharArray() -  문자열을 문자배열(char[])로 변환해서 반환한다.
+- Arrays(클래스)로 배열 다루기
+  - 배열의 비교와 출력   -  equals(), toString()
+    - int[] arr = {0,1,2,3,4};
+    - int[][] arr2D = {{11,12}, {21,22}};
+    - System.out.println(Arrays.toString(arr));   // [0,1,2,3,4]
+    - System.out.println(Arrays.deepToString(arr2D)); // [[11,12], [21,22]]
+  - 배열의 복사   -  copyOf(), copyOfRange()
+    - Arrays.copyOf(배열명, 복사할 요소의 개수)
+    - 배열을 복사할 요소의 개수만큼 복사
+    - Arrays.copyOfRange(배열명, from, to)
+    - 배열을 인덱스 from부터 to까지(to는 미포함) 복사
+  - 배열의 정렬   -  sort()
+    - Arrays.sort(arr);
+    - 오름차순으로 배열을 정렬
