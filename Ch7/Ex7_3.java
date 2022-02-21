@@ -27,5 +27,6 @@ class Tv extends Product {
 public class Ex7_3 {
    public static void main(String[] args) {
       Tv t = new Tv();
+      System.out.println(t.toString());
    }
 }

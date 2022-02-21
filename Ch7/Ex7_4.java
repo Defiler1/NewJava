@@ -1,9 +1,9 @@
 package Ch7;
 
 class MyTv {
-   private boolean isPowerOn;
+   private boolean isPowerOn = false;
    private int channel;
-   private int vloume;
+   private int volume;
    private int prevChannel;
 
    final int MAX_VOLUME = 100;
@@ -12,6 +12,14 @@ class MyTv {
    final int MIN_CHANNEL = 1;
 
    // 알맞은 코드를 넣어 완성하시오
+
+   public void turnOnOff() {
+      if (isPowerOn == false) {
+         isPowerOn = true;
+      } else {
+         isPowerOn = false;
+      }
+   }
 
    public void setChannel(int channel) {
       if (channel > MAX_CHANNEL || channel < MIN_CHANNEL)
@@ -27,11 +35,11 @@ class MyTv {
    public void setVolume(int volume) {
       if (volume > MAX_VOLUME || volume < MIN_VOLUME)
          return;
-      this.vloume = volume;
+      this.volume = volume;
    }
 
    public int getVolume() {
-      return vloume;
+      return volume;
    }
 
    void gotoPrevChannel() {
